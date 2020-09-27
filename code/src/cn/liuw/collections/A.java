@@ -1,4 +1,4 @@
-package java.cn.liuw.collections;
+package cn.liuw.collections;
 
 /**
  * @author liuw

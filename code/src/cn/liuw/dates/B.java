@@ -1,4 +1,4 @@
-package java.cn.liuw.dates;
+package cn.liuw.dates;
 
 /**
  * @author liuw
