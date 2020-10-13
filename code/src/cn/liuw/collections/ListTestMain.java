@@ -10,17 +10,21 @@ import java.util.List;
 public class ListTestMain {
     
     public static void main(String[] args) {
+        
         List<ListA> listAS = new ArrayList<>();
         List<ListB> listBS = new ArrayList<>();
 
-        initListA(listAS);
+        System.out.println(listBS.size());
+        System.out.println(listAS.size());
+
+        /*initListA(listAS);
         System.out.println(listAS.size());
         listAS.parallelStream().forEach( a -> {
             ListB b = new ListB();
             listBS.add(b);
         });
         
-        System.out.println(listBS.size());
+        System.out.println(listBS.size());*/
         
     }
     
