@@ -5,4 +5,5 @@ package cn.liuw.collections;
  * @date 2020/9/18
  */
 public class A {
+    private String a;
 }
