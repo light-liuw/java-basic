@@ -7,4 +7,6 @@ package cn.liuw.collections;
 public class A {
     private String a;
     
+    
+    private String b;
 }
