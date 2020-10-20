@@ -1,4 +1,4 @@
-package cn.liuw.leet.common;
+package cn.liuw.leet;
 
 import java.util.Arrays;
 
