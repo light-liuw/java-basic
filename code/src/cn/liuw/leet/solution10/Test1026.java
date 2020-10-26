@@ -2,6 +2,7 @@ package cn.liuw.leet.solution10;
 
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.HashMap;
 
 /**
  * 1365. 有多少小于当前数字的数字
@@ -30,6 +31,7 @@ import java.util.Comparator;
 public class Test1026 {
 
     public static void main(String[] args) {
+
         int[] nums = {8, 1, 2, 2, 3};
         int[] result = smallerNumbersThanCurrent(nums);
         System.out.println(Arrays.toString(result));
@@ -37,6 +39,10 @@ public class Test1026 {
         int[] numsV2 = {8, 1, 2, 2, 3};
         int[] resultV2 = smallerNumbersThanCurrentV2(numsV2);
         System.out.println(Arrays.toString(resultV2));
+
+        int[] numsV3 = {8, 1, 2, 2, 3};
+        int[] resultV3 = smallerNumbersThanCurrentV3(numsV3);
+        System.out.println(Arrays.toString(resultV3));
     }
 
     public static int[] smallerNumbersThanCurrent(int[] nums) {
@@ -47,7 +53,7 @@ public class Test1026 {
             result[i] = 0;
             for (int j = 0; j < nums.length; j++) {
                 if (nums[i] > nums[j] && i != j) {
-                    result[i] += 1;
+                    result[i]++;
                 }
             }
         }
@@ -58,32 +64,54 @@ public class Test1026 {
     public static int[] smallerNumbersThanCurrentV2(int[] nums) {
 
         int n = nums.length;
-        
+
         int[][] data = new int[n][2];
 
         for (int i = 0; i < n; i++) {
             data[i][0] = nums[i];
             data[i][1] = i;
         }
-        
+
         Arrays.sort(data, new Comparator<int[]>() {
             @Override
             public int compare(int[] o1, int[] o2) {
-                return o1[0]-o2[0];
+                return o1[0] - o2[0];
             }
         });
-        
+
         int[] ret = new int[n];
 
         int prev = -1;
-        
+
         for (int i = 0; i < n; i++) {
             if (prev == -1 || data[i][0] != data[i - 1][0]) {
                 prev = i;
             }
             ret[data[i][1]] = prev;
         }
-        
+
+        return ret;
+    }
+
+    public static int[] smallerNumbersThanCurrentV3(int[] nums) {
+
+        HashMap<Integer, Integer> hashMap = new HashMap<>(nums.length);
+
+        int[] numCopy = Arrays.copyOf(nums, nums.length);
+
+        Arrays.sort(numCopy);
+
+        for (int i = numCopy.length - 1; i >= 0; i--) {
+            hashMap.put(numCopy[i], i);
+        }
+
+
+        int[] ret = new int[nums.length];
+
+        for (int i = 0; i < nums.length; i++) {
+            ret[i] = hashMap.get(nums[i]);
+        }
+
         return ret;
     }
 }
