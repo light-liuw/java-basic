@@ -1,4 +1,4 @@
-package cn.liuw.leet;
+package cn.liuw.leet.solution10;
 
 import cn.liuw.leet.common.Init;
 import cn.liuw.leet.object.ListNode;

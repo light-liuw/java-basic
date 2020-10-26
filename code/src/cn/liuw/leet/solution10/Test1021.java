@@ -1,4 +1,4 @@
-package cn.liuw.leet;
+package cn.liuw.leet.solution10;
 
 /**
  * 925. 长按键入
