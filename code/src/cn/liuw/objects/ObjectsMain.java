@@ -7,7 +7,10 @@ package cn.liuw.objects;
 public class ObjectsMain {
 
     public static void main(String[] args) {
-        
+        testCarInteger();
+    }
+    
+    private static void testCar() {
         Car car = new Car();
         System.out.println(car);
 
@@ -20,4 +23,10 @@ public class ObjectsMain {
             e.printStackTrace();
         }
     }
-}
+    
+    private static void testCarInteger() {
+        Car car = new Car();
+        int ci = car.getNumber() == null ? 0 : car.getNumber();
+        System.out.println(ci);
+    }
+ }

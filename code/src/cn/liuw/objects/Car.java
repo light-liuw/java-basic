@@ -7,6 +7,8 @@ package cn.liuw.objects;
 public class Car {
     
     private String no;
+    
+    private Integer number;
 
     public String getNo() {
         return no;
@@ -14,5 +16,13 @@ public class Car {
 
     public void setNo(String no) {
         this.no = no;
+    }
+
+    public Integer getNumber() {
+        return number;
+    }
+
+    public void setNumber(Integer number) {
+        this.number = number;
     }
 }
