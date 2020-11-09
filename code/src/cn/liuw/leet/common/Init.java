@@ -1,6 +1,7 @@
 package cn.liuw.leet.common;
 
 import cn.liuw.leet.object.ListNode;
+import cn.liuw.leet.object.TreeNode;
 
 /**
  * @author liuw
@@ -10,7 +11,7 @@ public class Init {
 
     /**
      * 根据传入数组初始化链表
-     * 
+     *
      * @param array
      * @return
      */
@@ -26,5 +27,24 @@ public class Init {
             cursor = node;
         }
         return head;
+    }
+
+    /**
+     * 根据传入数组初始化二叉树
+     *
+     * @param array
+     * @return
+     */
+    public static TreeNode initTreeNode(int[] array, int index, TreeNode root) {
+        
+        if (index == array.length - 1 || index >= array.length) {
+            return null;
+        }
+
+        root.value = array[index];
+        index++;
+        initTreeNode(array, index, root.left);
+        initTreeNode(array, index, root.right);
+        return root;
     }
 }
